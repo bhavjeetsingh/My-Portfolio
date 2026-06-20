@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 249, 246, 0.8);
+  background: var(--bg-header);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -720,4 +720,193 @@
   border-color: rgba(99, 102, 241, 0.25);
   background: var(--bg-accent-light);
   transform: translateY(-2px);
+}
+
+/* === Header Actions & Theme Toggle === */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resumeBtn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.resumeBtn:hover {
+  background: var(--bg-accent-light);
+  transform: translateY(-1px);
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+  border-color: var(--border-strong);
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+/* === Project Filters === */
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0 3rem;
+}
+
+.filterBtn {
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filterBtn:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.filterBtnActive {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+/* === Contact Form === */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 440px;
+  margin-top: 1rem;
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card-solid);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg-accent-light);
+}
+
+.formSubmitBtn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.formSubmitBtn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.formSubmitBtn:active {
+  transform: translateY(0);
+}
+
+.formSubmitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  font-size: 0.85rem;
+  color: #EF4444;
+  margin-top: 0.25rem;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 440px;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.successMessage h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.successMessage p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .navRight {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navRight {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .navLinks {
+    display: none; /* Hide navlinks on mobile header to save space */
+  }
 }
